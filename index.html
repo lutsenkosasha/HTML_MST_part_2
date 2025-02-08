@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Text Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            padding: 50px 0px 20px 0px;
+            box-sizing: border-box;
+        }
+
+        .line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .text {
+            flex-shrink: 0;
+            font-size: 110px;
+            line-height: 1.2;
+            white-space: nowrap;
+            padding: 0 20px;
+            margin-right: 10px;
+        }
+
+        .video-placeholder {
+            flex-grow: 1;
+            height: 65px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-placeholder video {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100vw;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .video-part1 video {
+            object-position: 0 10%;
+        }
+
+        .video-part2 video {
+            object-position: 0 30%;
+        }
+
+        .video-part3 video {
+            object-position: 0 50%;
+        }
+
+        .video-part4 video {
+            object-position: 0 70%;
+        }
+
+        @media (max-width: 1024px) {
+            .text {
+                font-size: 64px;
+            }
+
+            .video-placeholder {
+                height: 40px;
+            }
+
+            .text {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .text {
+                font-size: 48px;
+            }
+
+            .video-placeholder {
+                height: 30px;
+            }
+
+            .text {
+                padding: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text {
+                font-size: 32px;
+            }
+
+            .video-placeholder {
+                height: 20px;
+            }
+
+            .text {
+                padding: 0 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="line">
+            <div class="text">We're here</div>
+            <div class="video-placeholder video-part1"><video src="video.mp4" autoplay muted loop></video></div>
+            <div class="text">to make</div>
+        </div>
+        
+        <div class="line">
+            <div class="text">healthy</div>
+            <div class="video-placeholder video-part2"><video src="video.mp4" autoplay muted loop></video></div>
+            <div class="text">living effortless,</div>
+        </div>
+
+        <div class="line">
+            <div class="text">so you can</div>
+            <div class="video-placeholder video-part3"><video src="video.mp4" autoplay muted loop></video></div>
+            <div class="text">live longer</div>
+        </div>
+
+        <div class="line">
+            <div class="text">and happier</div>
+            <div class="video-placeholder video-part4"><video src="video.mp4" autoplay muted loop></video></div>
+            <div class="text"> </div>
+        </div>
+    </div>
+</body>
+</html>
